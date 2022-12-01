@@ -1,0 +1,14 @@
+{
+  "validator": [
+    {
+      "url": "https://www.casasbahia.com.br/addToCart",
+      "schema_name": [
+        "casasBahia-addToCart"
+      ],
+      "dataLayer": "dataLayer",
+      "browserClose": true,
+      "time": 0
+    }
+  ]
+}
+
