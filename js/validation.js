@@ -21,8 +21,9 @@ function validationResult(status, message, dataLayer, objectName, keyName){
     message: message,
     partialErrors: partialErrors
   });
+  return fullValidation
 };
-
+validationResult()
 /**
  * @function - valida se os eventos do dataLayer bate com os eventos do schema.
  * @param {object} schemaItem - é o caminho do schema, no caso schema.array.items, retorna todo o objeto do schema após o items.
@@ -229,7 +230,7 @@ function validate(schema, dataLayer, callback){
   return(fullValidation)
 }
 
-module.exports(
+export default(
   validate,
   checkMissingEvents,
   checkMissingProperty,
