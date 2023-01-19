@@ -1,10 +1,8 @@
 import validationResult from "../js/validation.js";
 
 function verifica() {
-    console.log(validationResult) 
+    return validationResult() 
     }
 verifica()
-
-
 
 export default verifica
