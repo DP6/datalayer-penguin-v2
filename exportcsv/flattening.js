@@ -1,14 +1,6 @@
-const data = 
-[
-  {
-    dataLayer: 'dataLayer',
-    objectName: 'objectName',
-    keyName: 'keyName',
-    status: 'status',
-    message: 'message',
-    partialErrors: { ocurrences: 0, trace: '' }
-  }
-]
+import result from "../resultado/result.js"
+
+let data = result()
 
 let dt = (obj, arr = []) => {
   return Object.keys(obj).reduce((result, index) => {
