@@ -1,0 +1,228 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Generated schema for Root",
+	"type": "array",
+    "items": [
+		
+			{
+			  "type": "object",
+			  "properties": {
+				"event": {
+				  "type": "string",
+				  "enum": [
+					"update"
+				  ]
+				},
+				"aplicacao": {
+				  "type": "object",
+				  "properties": {
+					"bandeira": {
+					  "type": "string",
+					  "pattern": "cb|ex|pf"
+					},
+					"dominio": {
+					  "type": "string",
+					  "pattern": "teste.com.br|teste1.com.br|teste2.com.br"
+					},
+					"ambiente": {
+					  "type": "string",
+					  "enum": [
+						"producaoteste"
+					  ]
+					},
+					"device": {
+					  "type": "string",
+					  "pattern": "desktop|mobile|msite"
+					},
+					"servidor": {
+					  "type": "number"
+					}
+				  },
+				  "required": [
+					"bandeira",
+					"dominio",
+					"ambiente",
+					"device",
+					"servidor"
+				  ]
+				}
+			  },
+			  "required": [
+				"event",
+				"aplicacao"
+			  ]
+			},
+			{
+			  "type": "object",
+			  "properties": {
+				"event": {
+				  "type": "string",
+				  "enum": [
+					"update"
+				  ]
+				},
+				"pagina": {
+				  "type": "object",
+				  "properties": {
+					"url": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"nomePagina": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"templatePagina": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"tituloPagina": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"erro": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"navegacao": {
+					  "type": "object",
+					  "properties": {
+						"idDepartamento": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"nomeDepartamento": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"idLinha": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"nomeLinha": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"idSubLinha": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"nomeSubLinha": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"idMenu": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"filtro": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"origemInterna": {
+						  "type": "string",
+						  "pattern": ".*"
+						},
+						"tipoOrigemInterna": {
+						  "type": "string",
+						  "pattern": ".*"
+						}
+					  },
+					  "required": [
+						"idDepartamento",
+						"nomeDepartamento",
+						"idLinha",
+						"nomeLinha",
+						"idSubLinha",
+						"nomeSubLinha",
+						"idMenu",
+						"filtro",
+						"origemInterna",
+						"tipoOrigemInterna"
+					  ]
+					}
+				  },
+				  "required": [
+					"url",
+					"nomePagina",
+					"templatePagina",
+					"tituloPagina",
+					"navegacao"
+				  ]
+				}
+			  },
+			  "required": [
+				"event",
+				"pagina"
+			  ]
+			},
+			{
+			  "type": "object",
+			  "properties": {
+				"event": {
+				  "type": "string",
+				  "enum": [
+					"update"
+				  ]
+				},
+				"usuario": {
+				  "type": "object",
+				  "properties": {
+					"idUsuario": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"idUnicoVia": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"statusLogin": {
+					  "type": "string",
+					  "pattern": "visitante|logado"
+					},
+					"tipoUsuario": {
+					  "type": "string",
+					  "pattern": "novo|recorrente"
+					},
+					"uf": {
+					  "type": "string",
+					  "pattern": "^[a-z][a-z]$"
+					},
+					"email": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"nome": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"sobrenome": {
+					  "type": "string",
+					  "pattern": ".*"
+					},
+					"telefone": {
+					  "type": "string",
+					  "pattern": ".*"
+					}
+				  },
+				  "required": [
+					"statusLogin",
+					"idUsuario",
+					"idUnicoVia",
+					"tipoUsuario",
+					"uf",
+					"email",
+					"nome",
+					"sobrenome",
+					"telefone"
+				  ]
+				}
+			  },
+			  "required": [
+				"event",
+				"usuario"
+			  ]
+			}
+		  
+	  ]
+  }
