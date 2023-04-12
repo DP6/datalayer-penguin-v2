@@ -29,7 +29,7 @@ if(stopAdBlock !== "stopAdBlock"){ // to stop adblock functioning
       await page.goto(config.validator[0].url[0]); // website to be opened
       await page.setViewport({width: 1080, height: 1024}); // screen size
       await page.exposeFunction('bowser', (elm) => { //intermediary function between machine and browser (injects the validation function into the browser)
-            validation(schema.items,elm)
+            console.log(validation(schema.items,elm))
       });
       await page.evaluate(async () => { //performs the validation process in the browser
         for(let elem of window.dataLayer){ //get dataLayer events

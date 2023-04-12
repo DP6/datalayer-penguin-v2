@@ -1,3 +1,0 @@
-import { Localize } from "../types"
-declare const localize: Localize
-export default localize
