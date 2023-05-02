@@ -20,6 +20,7 @@
   "homepage": "https://github.com/DP6/datalayer-penguin-v2#readme",
   "dependencies": {
     "@segment/ajv-human-errors": "^2.7.0",
+    "pdfmake": "^0.2.7",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-adblocker": "^2.13.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"

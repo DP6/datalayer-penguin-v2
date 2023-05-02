@@ -41,6 +41,13 @@ for(let [key,value] of Object.entries(data)){
 
 
 let result = []
+function validObj(status, message, dlObject){
+  result.push({
+    status: status,
+    message: message,
+    dlObject: dlObject
+  })
+}
 function validation(schema, data) { // validation function
   for (let i = 0; i < schema.length; i++) { // check schema size
     if (schema[i].properties.event.enum[0] === data.event) { // checks if event name in schema is the same in dataLayer
@@ -52,11 +59,11 @@ function validation(schema, data) { // validation function
               let arr = []
               arr.push(errors)
               if(!!arr[0].message){
-              result.push(`${arr[0].message} in the ${JSON.stringify(data,null,2)}`) // error mesage
+              validObj(`Error`,`${arr[0].message}`, JSON.stringify(data,null,2)) // error mesage
               }
               schema.split(i,1) // deletes the validated event from the schema 
             }else{
-              result.push(`correct in ${JSON.stringify(data,null,2)}`)  // if the dataLayer is correct
+              validObj(`Error`, `correct`, JSON.stringify(data,null,2))  // if the dataLayer is correct
               schema.split(i,1) // deletes the validated event from the schema
             }      
          }
@@ -67,17 +74,17 @@ function validation(schema, data) { // validation function
           let arr = []
           arr.push(errors)
           if(!!arr[0].message){
-          result.push(`${arr[0].message} in the ${JSON.stringify(data,null,2)}`)
+          validObj(`Error`, `${arr[0].message}`, JSON.stringify(data,null,2))
           }
           schema.split(i,1)
         }else{
-          result.push(`correct in ${JSON.stringify(data,null,2)}`)
+          validObj(`OK`, `correct`, JSON.stringify(data,null,2))
           schema.split(i,1)
         }  
       }
     }
   }
-  result.push(`The dataLayer event is not present in the schema ${JSON.stringify(data,null,2)}`) //if the dataLayer event is not in the schema
+  validObj(`Error`, `The dataLayer event is not present in the schema`, JSON.stringify(data,null,2)) //if the dataLayer event is not in the schema
   return result  
 }
 

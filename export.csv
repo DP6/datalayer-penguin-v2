@@ -1,0 +1,45 @@
+Error,The dataLayer event is not present in the schema,{
+  "gtm.start": 1682345065291,
+  "event": "gtm.js",
+  "gtm.uniqueEventId": 1
+}
+Error,The dataLayer event is not present in the schema,{
+  "event": "gtm.js",
+  "gtm.uniqueEventId": 2
+}
+Error,The value at /aplicacao/dominio is an invalid string. The value at /aplicacao/ambiente must be one of: "producaoteste". The value at /aplicacao/servidor must be a number but it was a string.,{
+  "event": "update",
+  "aplicacao": {
+    "bandeira": "cb",
+    "dominio": "casasbahia.com.br",
+    "ambiente": "producao",
+    "device": "desktop",
+    "servidor": "vitrinecb121"
+  },
+  "gtm.uniqueEventId": 3
+}
+Error,The value at /usuario is missing the required field 'idUsuario'. The value at /usuario is missing the required field 'idUnicoVia'. The value at /usuario is missing the required field 'tipoUsuario'. The value at /usuario is missing the required field 'uf'. The value at /usuario is missing the required field 'email'. The value at /usuario is missing the required field 'nome'. The value at /usuario is missing the required field 'sobrenome'. The value at /usuario is missing the required field 'telefone'.,{
+  "event": "update",
+  "usuario": {
+    "statusLogin": "visitante"
+  },
+  "gtm.uniqueEventId": 4
+}
+Error,The value at /pagina is missing the required field 'navegacao'.,{
+  "event": "update",
+  "pagina": {
+    "url": "https://www.casasbahia.com.br/site/paginavitrinenew.aspx",
+    "nomePagina": "/vitrine/home",
+    "templatePagina": "home",
+    "tituloPagina": "casas bahia cupom de 10 15 e 20 de desconto"
+  },
+  "gtm.uniqueEventId": 5
+}
+Error,The dataLayer event is not present in the schema,{
+  "event": "gtm.dom",
+  "gtm.uniqueEventId": 6
+}
+Error,The dataLayer event is not present in the schema,{
+  "event": "gtm.load",
+  "gtm.uniqueEventId": 7
+}

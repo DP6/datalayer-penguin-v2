@@ -3,8 +3,10 @@ import validation from './index.js';
 import { readFileSync } from 'node:fs';
 import AdblockerPlugin from 'puppeteer-extra-plugin-adblocker';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
+import fs from "fs"
   puppeteer.use(StealthPlugin());
 
+let result = []  
 let [config_file, stopAdBlock] = process.argv.slice(2) // responsible for commands entered at the prompt
 
 const config = JSON.parse( // this const import json configuration schema from config folder
@@ -29,7 +31,12 @@ if(stopAdBlock !== "stopAdBlock"){ // to stop adblock functioning
       await page.goto(config.validator[0].url[0]); // website to be opened
       await page.setViewport({width: 1080, height: 1024}); // screen size
       await page.exposeFunction('bowser', (elm) => { //intermediary function between machine and browser (injects the validation function into the browser)
-            console.log(validation(schema.items,elm))
+            result.push(validation(schema.items,elm))
+            fs.writeFile("dataLayer.json", JSON.stringify(result[0], null, 2), err =>{
+              if(err) throw new Error("Erro")
+              //console.log("Validação concluída!")
+            });
+            console.log(result)
       });
       await page.evaluate(async () => { //performs the validation process in the browser
         for(let elem of window.dataLayer){ //get dataLayer events

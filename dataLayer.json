@@ -1,0 +1,37 @@
+[
+  {
+    "status": "Error",
+    "message": "The dataLayer event is not present in the schema",
+    "dlObject": "{\n  \"gtm.start\": 1682454787280,\n  \"event\": \"gtm.js\",\n  \"gtm.uniqueEventId\": 1\n}"
+  },
+  {
+    "status": "Error",
+    "message": "The dataLayer event is not present in the schema",
+    "dlObject": "{\n  \"event\": \"gtm.js\",\n  \"gtm.uniqueEventId\": 2\n}"
+  },
+  {
+    "status": "Error",
+    "message": "The value at /aplicacao/dominio is an invalid string. The value at /aplicacao/ambiente must be one of: \"producaoteste\". The value at /aplicacao/servidor must be a number but it was a string.",
+    "dlObject": "{\n  \"event\": \"update\",\n  \"aplicacao\": {\n    \"bandeira\": \"cb\",\n    \"dominio\": \"casasbahia.com.br\",\n    \"ambiente\": \"producao\",\n    \"device\": \"desktop\",\n    \"servidor\": \"vitrinecb118\"\n  },\n  \"gtm.uniqueEventId\": 3\n}"
+  },
+  {
+    "status": "Error",
+    "message": "The value at /usuario is missing the required field 'idUsuario'. The value at /usuario is missing the required field 'idUnicoVia'. The value at /usuario is missing the required field 'tipoUsuario'. The value at /usuario is missing the required field 'uf'. The value at /usuario is missing the required field 'email'. The value at /usuario is missing the required field 'nome'. The value at /usuario is missing the required field 'sobrenome'. The value at /usuario is missing the required field 'telefone'.",
+    "dlObject": "{\n  \"event\": \"update\",\n  \"usuario\": {\n    \"statusLogin\": \"visitante\"\n  },\n  \"gtm.uniqueEventId\": 4\n}"
+  },
+  {
+    "status": "Error",
+    "message": "The value at /pagina is missing the required field 'navegacao'.",
+    "dlObject": "{\n  \"event\": \"update\",\n  \"pagina\": {\n    \"url\": \"https://www.casasbahia.com.br/site/paginavitrinenew.aspx\",\n    \"nomePagina\": \"/vitrine/home\",\n    \"templatePagina\": \"home\",\n    \"tituloPagina\": \"casas bahia cupom de 10 15 e 20 de desconto\"\n  },\n  \"gtm.uniqueEventId\": 5\n}"
+  },
+  {
+    "status": "Error",
+    "message": "The dataLayer event is not present in the schema",
+    "dlObject": "{\n  \"event\": \"gtm.dom\",\n  \"gtm.uniqueEventId\": 6\n}"
+  },
+  {
+    "status": "Error",
+    "message": "The dataLayer event is not present in the schema",
+    "dlObject": "{\n  \"event\": \"gtm.load\",\n  \"gtm.uniqueEventId\": 7\n}"
+  }
+]

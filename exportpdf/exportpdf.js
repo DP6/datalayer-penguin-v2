@@ -1,33 +1,59 @@
+import dataLayer from '../dataLayer.json' assert {type: 'json'};
 import fs from 'fs';
-import PdfPrinter from 'pdfmake';
-
+import pdfMake from 'pdfmake';
 import fonts from './pdfMake_fonts.json' assert {type: 'json'}; 
 import docDefinition from './docDefinition.json' assert {type: 'json'}; 
 
-const printer = new PdfPrinter(fonts)
 
-let data = 
-  {
-    dataLayer: undefined,
-    objectName: undefined,
-    keyName: undefined,
-    status: undefined,
-    message: undefined,
-    partialErrors: { ocurrences: 0, trace: '' }
-  } 
+const printer = new pdfMake(fonts);
 
 
 
-let pdfDoc = printer.createPdfKitDocument(docDefinition);
-pdfDoc.pipe(fs.createWriteStream('document.pdf', data)); 
-pdfDoc.end();
-//const chunks = []
-//pdfDoc.on('data', (chunk) =>{
-//  chunks.push(chunk)
-//});
+dataLayer.forEach((dataObject) =>{
+  if(dataObject){
+    dataObject.dlObject = dataObject.dlObject.replace(/(\r\n|\n|\r)/gm, '').replace(/\s/g, '').split(',').join('');
+    }
 
+  
+ 
+    docDefinition.content[6].table.body.push([
+      {
+        text: `${dataObject.status}`,
+        alignment: 'center',
+      },
+      {
+        text: `${dataObject.message}`,
+        alignment: 'center',
+      },
+      {
+        text: `${dataObject.dlObject}`
+      }
+    ]);
+    pdfMake.tableLayouts = {
+      exampleLayout: {
+        hLineWidth: function (i, node) {
+          if (i === 0 || i === node.table.body.length) {
+           return 0;
+          }
+          return i === node.table.headerRows ? 2 : 1;
+        },
+        vLineWidth: function (i) {
+          return 0;
+        },
+        hLineColor: function (i) {
+          return i === 1 ? 'black' : '#aaa';
+        },
+        paddingLeft: function (i) {
+          return i === 0 ? 0 : 8;
+        },
+        paddingRight: function (i, node) {
+         return i === node.table.widths.length - 1 ? 0 : 8;
+        },
+      },
+    };
+  const pdfDoc = printer.createPdfKitDocument(docDefinition);
+  pdfDoc.pipe(fs.createWriteStream(`document.pdf`));
+  pdfDoc.end()
+  
 
-//pdfDoc.on('end', () =>{
-//  const result = Buffer.concat(chunks)
-//  Response.end(result)
-//});
+});
